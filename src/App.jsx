@@ -35,7 +35,7 @@ let x = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        index: true,
+        path:"EcommerceFinal",
         element: (
           <ProtectedRoute>
             <Home />
