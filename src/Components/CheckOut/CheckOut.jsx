@@ -4,6 +4,7 @@ import axios from "axios";
 import { UserContext } from "./../../Context/UserContext";
 import { CartContext } from "./../../Context/CartContext";
 
+
 export default function CheckOut() {
   let { checkout , getLoggedUserCart} = useContext(CartContext);
 
@@ -33,7 +34,7 @@ export default function CheckOut() {
 
     onSubmit: () =>
       handleCheckOut(
-        cartId, `http://localhost:5173`),
+        cartId, `https://KeroulsShokrallah.github.io/EcommerceFinal`),
   });
 
   async function handleCheckOut(cartId, url) {
