@@ -40,7 +40,7 @@ export default function CheckOut() {
   async function handleCheckOut(cartId, url) {
    let {data} = await checkout(cartId, url, formik.values);
    console.log(data.session.url);
-   //window.location.href =data.session.url;
+   window.location.href =data.session.url;
    
   }
 
