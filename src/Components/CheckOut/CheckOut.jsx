@@ -34,13 +34,13 @@ export default function CheckOut() {
 
     onSubmit: () =>
       handleCheckOut(
-        cartId, `https://KeroulsShokrallah.github.io/EcommerceFinal`),
+        cartId, `https://KeroulsShokrallah.github.io/EcommerceFinal/#/`),
   });
 
   async function handleCheckOut(cartId, url) {
    let {data} = await checkout(cartId, url, formik.values);
    console.log(data.session.url);
-   window.location.href =data.session.url;
+   //window.location.href =data.session.url;
    
   }
 
