@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className="flex flex-wrap justify-center gap-3 lg:justify-between items-center mx-auto max-w-screen-xl p-4">
           <div className="flex gap-3 items-center">
             <Link
-              to="EcommerceFinal"
+              to=""
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
               <img
@@ -33,7 +33,7 @@ export default function Navbar() {
             {userLogin != null ? (
               <ul className="flex gap-3">
                 <li className="text-slate-500">
-                  <Link to="EcommerceFinal">Home</Link>
+                  <Link to="">Home</Link>
                 </li>
                 <li className="text-slate-500">
                   <Link to="cart">Cart</Link>

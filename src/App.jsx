@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createHashRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
 import Home from "./Components/Home/Home";
 import Products from "./Components/Products/Products";
@@ -19,23 +19,23 @@ import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import CartContextProvider from "./Context/CartContext";
-import  { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import CheckOut from "./Components/CheckOut/CheckOut";
 import Allorders from "./Components/Allorders/Allorders";
-import BrandDetails from './Components/BrandDetails/BrandDetails';
-import CategoryDetails from './Components/CategoryDetails/CategoryDetails';
+import BrandDetails from "./Components/BrandDetails/BrandDetails";
+import CategoryDetails from "./Components/CategoryDetails/CategoryDetails";
 import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
 import Verifycode from "./Components/Verifycode/Verifycode";
 import UpdatePassword from "./Components/UpdatePassword/UpdatePassword";
 
 
-let x = createBrowserRouter([
+let x = createHashRouter([
   {
     path: "",
     element: <Layout />,
     children: [
       {
-        path:"EcommerceFinal",
+        index: true,
         element: (
           <ProtectedRoute>
             <Home />
@@ -83,7 +83,6 @@ let x = createBrowserRouter([
         ),
       },
 
-
       {
         path: "categories",
         element: (
@@ -100,7 +99,7 @@ let x = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-  
+
       {
         path: "checkout",
         element: (
@@ -137,7 +136,7 @@ function App() {
           <QueryClientProvider client={query}>
             <CartContextProvider>
               <RouterProvider router={x}></RouterProvider>
-              <Toaster/>
+              <Toaster />
             </CartContextProvider>
             <ReactQueryDevtools />
           </QueryClientProvider>
